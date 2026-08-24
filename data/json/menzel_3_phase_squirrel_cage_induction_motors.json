@@ -1,0 +1,18 @@
+{
+    "source": "menzel",
+    "product_name": "3 phase squirrel cage induction motors",
+    "url": "https://www.menzel-motors.com/squirrel-cage-motor/ic411-ic416/",
+    "specifications": {
+        "Construction types": "IM B3, V1, IM B35, IM V15",
+        "Protection classes": "IP55 (optional IP56, IP67)",
+        "Voltage": "from 380 V to 13,800 V",
+        "Power range": "up to 2600 kW",
+        "Frame size": "from 280 to 560",
+        "Terminal box": "above, rotatable by 4 x 90°",
+        "Motor housing": "made of gray cast iron; optionally made of welded steel",
+        "Thermal utilization": "F/B"
+    },
+    "features": [
+        "For grid and inverter operation"
+    ]
+}

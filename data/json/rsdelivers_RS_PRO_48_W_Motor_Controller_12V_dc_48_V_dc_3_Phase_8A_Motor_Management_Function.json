@@ -1,0 +1,28 @@
+{
+    "source": "rs_delivers",
+    "product_name": "RS PRO 48 W Motor Controller, 12V dc, 48 V dc, 3 Phase, 8A, Motor Management Function",
+    "url": "https://int.rsdelivers.com/product/rs-pro/rs-pro-48-w-motor-controller-12v-dc-48-v-dc-3-8a/0434543",
+    "specifications": {
+        "Brand": "RS Pro",
+        "Number of Phases": "3",
+        "Product Type": "Motor Controller",
+        "Control Function": "Motor Management",
+        "Output Voltage": "48V",
+        "Supply Voltage": "12, 48V dc",
+        "Current Rating": "8A",
+        "Power Rating": "48W",
+        "Overall Length": "109mm",
+        "Overall Width": "45mm",
+        "Overall Depth": "116mm",
+        "Minimum Operating Temperature": "0°C",
+        "Maximum Operating Temperature": "40°C",
+        "Standards/Approvals": "No",
+        "Series": "SMSD-8.0Modbus",
+        "Country of Origin": "Estonia"
+    },
+    "sku": "0434543",
+    "product_id": "434-543",
+    "category": "Automation & Control Gear > Electric Motors > Motor Controllers",
+    "brand": "RS PRO",
+    "image": "https://res.cloudinary.com/rsc/image/upload/b_rgb:FFFFFF,c_pad,dpr_1.0,f_auto,q_auto,w_700/c_pad,w_700/Y0434543-01.jpg"
+}

@@ -1,0 +1,21 @@
+{
+    "source": "menzel",
+    "product_name": "Asynchronous squirrel cage motor with open-circuit ventilation (IC 01 + IC 06)",
+    "url": "https://www.menzel-motors.com/squirrel-cage-motor/ic01-ic06/",
+    "specifications": {
+        "Construction type": "IM B3, IM V1 (special designs as in IM B35 possible at any time)",
+        "Protection classes": "IP23",
+        "Voltage": "from 380 V to 13,800 V",
+        "Power range": "up to 25000 kW (25 MW)",
+        "Frame size": "from 200 to 900",
+        "Terminal box": "above, rotatable by 4 x 90°, sideways optional",
+        "Motor housing": [
+            "(MEBKGD, low voltage motor): Frame size 200 to 355, gray cast iron",
+            "(MEBKSD medium and high voltage motor): frame size from 355, welded steel"
+        ],
+        "Thermal utilization": "F/B"
+    },
+    "features": [
+        "For grid and inverter operation"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "source": "rs_delivers",
+    "product_name": "RS PRO 480 W Motor Controller, 12V dc, 24 V dc, 1 Phase, 20A, Motor Management Function",
+    "url": "https://int.rsdelivers.com/product/rs-pro/rs-pro-480-w-motor-controller-12v-dc-24-v-dc-1-20a/0434544",
+    "specifications": {
+        "Brand": "RS Pro",
+        "Product Type": "Motor Controller",
+        "Number of Phases": "1",
+        "Control Function": "Motor Management",
+        "Output Voltage": "24V dc",
+        "Supply Voltage": "12, 24V dc",
+        "Current Rating": "20A",
+        "Power Rating": "480W",
+        "Overall Length": "100mm",
+        "Overall Width": "23mm",
+        "Overall Depth": "116mm",
+        "Minimum Operating Temperature": "0°C",
+        "Maximum Operating Temperature": "50°C",
+        "Standards/Approvals": "No",
+        "Series": "BMSD-20Modbus",
+        "Country of Origin": "Estonia"
+    }
+}
