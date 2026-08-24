@@ -29,6 +29,9 @@ sprint3-rpa/
 │   ├── regras_alerta.py         # motor de regras (baseline + desvio por sensor)
 │   ├── contexto_tecnico.py      # ponte Pilar 1 → Pilar 2: indexa data/json/ por sensor
 │   └── monitor_eventos.py       # roda as regras, grava eventos, atualiza status
+├── tests/
+│   ├── test_regras_alerta.py    # testa o motor de regras isolado
+│   └── test_contexto_tecnico.py # testa a ponte Pilar 1 → Pilar 2 isolada
 └── data/
     ├── json/                    # evidência da coleta — 1 JSON por produto (weg/menzel/rsdelivers)
     └── debug/                   # HTML salvo quando um crawler não acha o esperado
