@@ -20,3 +20,9 @@ CREATE TABLE IF NOT EXISTS evento_alerta (
 
 CREATE INDEX IF NOT EXISTS idx_evento_alerta_tag
     ON evento_alerta(tag_id, criado_em DESC);
+
+-- Ponte com o Pilar 1 (scraping): contexto de referência dos catálogos
+-- raspados (WEG/Menzel/RS Delivers), quando existir para o sensor do
+-- desvio. Coluna nova, adicionada de forma idempotente sem afetar linhas
+-- já existentes.
+ALTER TABLE evento_alerta ADD COLUMN IF NOT EXISTS contexto_tecnico TEXT;
