@@ -113,3 +113,13 @@ Os JSONs gerados pelo Pilar 1 não ficam só como evidência estática: `context
 - **Scraping Menzel/RS Delivers**: só testados com amostra pequena (poucos produtos / 1 página), não o catálogo/paginação completos. RS Delivers em particular retorna ~25 mil resultados pra "motores" — a paginação (`max_paginas`, default 5) é um limite prático, não um fim natural dos resultados.
 - **Regras de alerta**: os limites em `src/regras_alerta.py` são uma premissa documentada (não vêm de um modelo de ML/DL — não existe um treinado neste projeto), ajustáveis conforme dados reais de falha aparecerem.
 - **Contexto técnico**: cobertura depende do que já foi raspado — hoje há referências pra temperatura, tensão, corrente e rotação, mas nenhuma pra vibração (nenhum produto raspado até agora expõe esse campo).
+
+## 👥 Equipe
+
+| RM | Nome |
+|---|---|
+| 552574 | Bruno Fernandes Nascimento |
+| 566325 | Júlia Aben Athar da Silveira |
+| 565260 | Edgar Lódula de Assis |
+| 565293 | Guilherme Gama Bitencourt Souza |
+| 563632 | Igor Thiago Nakajima Vieira |
