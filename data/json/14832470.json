@@ -1,0 +1,14 @@
+{
+    "Norma": "NEMA MG-1",
+    "Frequência": "50 Hz",
+    "Tensão": "220-240 V",
+    "Número de polos": "2",
+    "Grau de proteção": "IP21",
+    "Rotação síncrona": "3000 rpm",
+    "Potência": "0.25 HP",
+    "Fixação": "Com pés",
+    "Flange": "Sem",
+    "Forma construtiva": "F-1",
+    "Caixa de ligação¹": "Sem caixa de ligação",
+    "Refrigeração": "IC01 - ODP"
+}
