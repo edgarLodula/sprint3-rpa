@@ -8,8 +8,8 @@ CREATE TABLE IF NOT EXISTS evento_alerta (
     tag_id INT REFERENCES tag(id) ON DELETE CASCADE,
     leitura_id BIGINT REFERENCES leitura_sensor(id) ON DELETE SET NULL,
     sensor VARCHAR(30) NOT NULL,
-    valor_medido FLOAT NOT NULL,
-    limite_violado FLOAT NOT NULL,
+    valor_medido FLOAT,
+    limite_violado FLOAT,
     severidade VARCHAR(20) NOT NULL,
     mensagem TEXT,
     sugestao_acao TEXT,
@@ -17,6 +17,12 @@ CREATE TABLE IF NOT EXISTS evento_alerta (
     status_novo VARCHAR(20),
     criado_em TIMESTAMP DEFAULT NOW()
 );
+
+-- valor_medido/limite_violado ficam sem valor em desvios "multivariado"
+-- (detectados só pelo modelo de ML, sem um único sensor estourando limite
+-- fixo) — ver deteccao_ml/ml_score abaixo.
+ALTER TABLE evento_alerta ALTER COLUMN valor_medido DROP NOT NULL;
+ALTER TABLE evento_alerta ALTER COLUMN limite_violado DROP NOT NULL;
 
 CREATE INDEX IF NOT EXISTS idx_evento_alerta_tag
     ON evento_alerta(tag_id, criado_em DESC);
@@ -26,3 +32,11 @@ CREATE INDEX IF NOT EXISTS idx_evento_alerta_tag
 -- desvio. Coluna nova, adicionada de forma idempotente sem afetar linhas
 -- já existentes.
 ALTER TABLE evento_alerta ADD COLUMN IF NOT EXISTS contexto_tecnico TEXT;
+
+-- Camada de ML (deteccao_anomalia_ml.py): todo evento passa pelo mesmo
+-- modelo (IsolationForest treinado no histórico do próprio ativo), então
+-- fica registrado se o ML concorda com o desvio de regra e o quão anômala
+-- a leitura ficou (score menor = mais anômalo). Fica NULL quando não havia
+-- histórico suficiente pra treinar o modelo naquela rodada.
+ALTER TABLE evento_alerta ADD COLUMN IF NOT EXISTS deteccao_ml BOOLEAN;
+ALTER TABLE evento_alerta ADD COLUMN IF NOT EXISTS ml_score FLOAT;
