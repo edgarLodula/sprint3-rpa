@@ -1,0 +1,19 @@
+{
+    "source": "norma_iso_10816-3",
+    "product_name": "ISO 10816-3 - Zonas de severidade de vibração (RMS, mm/s)",
+    "url": "https://www.fabrico.io/blog/iso-10816-3-vibration-severity/",
+    "specifications": {
+        "Vibração - Group 2, rigid support - limite Zona A/B": "1.4 mm/s",
+        "Vibração - Group 2, rigid support - limite Zona B/C": "2.8 mm/s",
+        "Vibração - Group 2, rigid support - limite Zona C/D": "4.5 mm/s",
+        "Vibração - Group 2, flexible support - limite Zona A/B": "2.3 mm/s",
+        "Vibração - Group 2, flexible support - limite Zona B/C": "4.5 mm/s",
+        "Vibração - Group 2, flexible support - limite Zona C/D": "7.1 mm/s",
+        "Vibração - Group 1, rigid support - limite Zona A/B": "2.3 mm/s",
+        "Vibração - Group 1, rigid support - limite Zona B/C": "4.5 mm/s",
+        "Vibração - Group 1, rigid support - limite Zona C/D": "7.1 mm/s",
+        "Vibração - Group 1, flexible support - limite Zona A/B": "3.5 mm/s",
+        "Vibração - Group 1, flexible support - limite Zona B/C": "7.1 mm/s",
+        "Vibração - Group 1, flexible support - limite Zona C/D": "11.0 mm/s"
+    }
+}

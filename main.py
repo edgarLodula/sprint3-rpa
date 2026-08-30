@@ -24,13 +24,19 @@ def rodar_scraping_rsdelivers():
     run()
 
 
+def rodar_scraping_norma_vibracao():
+    from src.norma_vibracao_page import run
+    run()
+
+
 def rodar_scraping_todos():
-    """Roda as 3 fontes uma atrás da outra. Se uma falhar, as outras
+    """Roda as 4 fontes uma atrás da outra. Se uma falhar, as outras
     continuam mesmo assim."""
     for nome, funcao in [
         ("WEG", rodar_scraping_weg),
         ("MENZEL", rodar_scraping_menzel),
         ("RS DELIVERS", rodar_scraping_rsdelivers),
+        ("NORMA ISO 10816-3 (VIBRACAO)", rodar_scraping_norma_vibracao),
     ]:
         try:
             funcao()
@@ -43,7 +49,8 @@ def menu_scraping():
     print("1. WEG")
     print("2. Menzel")
     print("3. RS Delivers")
-    print("4. Todos")
+    print("4. Norma ISO 10816-3 (tabela de vibração)")
+    print("5. Todos")
     print("0. Voltar")
     opcao = input("Escolha: ").strip()
     if opcao == "1":
@@ -53,6 +60,8 @@ def menu_scraping():
     elif opcao == "3":
         rodar_scraping_rsdelivers()
     elif opcao == "4":
+        rodar_scraping_norma_vibracao()
+    elif opcao == "5":
         rodar_scraping_todos()
     elif opcao == "0":
         return
