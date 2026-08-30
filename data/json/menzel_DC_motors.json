@@ -1,0 +1,16 @@
+{
+    "source": "menzel",
+    "product_name": "DC motors",
+    "url": "https://www.menzel-motors.com/dc-motors/",
+    "specifications": {
+        "Power range": "from 20 kW to 2000 kW",
+        "Voltage": "from 160 V to 1000 V",
+        "Construction types": "IM B3, IM B5, IM B6, IM B7, IM B8, IM B35, IM V1, IM V5, IM V3, IM V6",
+        "Dimensions": "up to 800 mm",
+        "Protection classes": "IP 55, IP 23",
+        "Cooling types": "IC 06, IC 17, IC 37, IC 86W, IC 666",
+        "Torque": "up to 200 kNm",
+        "Pole count": "2 poles/ 4 poles/ 6 poles/ 8 poles"
+    },
+    "features": []
+}

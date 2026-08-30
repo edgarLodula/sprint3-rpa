@@ -1,0 +1,19 @@
+{
+    "source": "menzel",
+    "product_name": "IP67 motors – watertight",
+    "url": "https://www.menzel-motors.com/ip67-motor/",
+    "specifications": {
+        "Standard": "IEC 34 and VDE 0530 standard",
+        "Power range": "from 37 kW to 2000 kW",
+        "Voltage": "from 380 V to 6600 V",
+        "Common construction types": "IM B3, IM B5, IM V1, IM B35",
+        "Available dimensions": "up to frame size 500",
+        "Motor housing": "Gray cast iron",
+        "Thermal utilization": "F/B",
+        "Cooling type": "IC 411",
+        "Pole count": "2-16 poles"
+    },
+    "features": [
+        "Three-phase asynchronous motors with squirrel cage rotor"
+    ]
+}

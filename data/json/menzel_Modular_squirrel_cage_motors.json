@@ -1,0 +1,19 @@
+{
+    "source": "menzel",
+    "product_name": "Modular squirrel cage motors",
+    "url": "https://www.menzel-motors.com/squirrel-cage-motor/ic611-ic616-ic666/",
+    "specifications": {
+        "Construction types": "IM B3, IM V1 (special designs possible at any time)",
+        "Protection classes": "IP23, IP55",
+        "Voltage": "from 380 V to 13800 V",
+        "Power range": "up to 20000 kW",
+        "Frame size": "from 315 to 900",
+        "Terminal box": "left and/or right",
+        "Motor housing": "Welded steel",
+        "Thermal utilization": "F/B"
+    },
+    "features": [
+        "Flexible dimensions",
+        "For grid and inverter operation"
+    ]
+}
