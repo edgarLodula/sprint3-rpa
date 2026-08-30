@@ -1,7 +1,9 @@
 
 import json
 import os
+import random
 import re
+import time
 from urllib.parse import urljoin
 
 from bs4 import BeautifulSoup
@@ -24,8 +26,6 @@ base_dir = os.path.dirname(os.path.abspath(__file__))
 folder = os.path.join(base_dir, "..", "data", "json")
 
 
-
-
 def _salvar_html_debug(url, prefixo, html=None):
     """Salva o HTML da página em data/debug pra dar uma olhada depois
     quando o crawler não acha o que precisa. Se `html` não for passado,
@@ -43,46 +43,52 @@ def _salvar_html_debug(url, prefixo, html=None):
         print(f"[DEBUG] falhou ao salvar HTML: {e}")
 
 
+def _specs_de_html(html):
+    # a tabela de specs do produto fica dentro de div.product-info-specs.
+    # a página tem várias outras <table>, então não dá pra pegar a primeira.
+    soup = BeautifulSoup(html, "html.parser")
+    elemento = soup.select_one("div.product-info-specs")
+    if elemento is None:
+        return None
+
+    table_line_value = [td.get_text(strip=True) for td in elemento.find_all("td")]
+    table_line_head = [th.get_text(strip=True) for th in elemento.find_all("th")]
+    if not table_line_head or not table_line_value:
+        return None
+
+    return dict(zip(table_line_head, table_line_value))
+
+
 def get_weg_talbe(table_page):
     try:
-        dic = {}
-
-        # a tabela de specs do produto fica dentro de div.product-info-specs.
-        # a página tem várias outras <table>, então não dá pra pegar a primeira.
         driver.get(table_page)
-
         wait = WebDriverWait(driver, 10)
-        elemento = wait.until(EC.presence_of_element_located(
-            (By.CSS_SELECTOR, "div.product-info-specs")))
+        wait.until(EC.presence_of_element_located((By.CSS_SELECTOR, "div.product-info-specs")))
 
-        html = elemento.get_attribute("outerHTML")
-        soup = BeautifulSoup(html, "html.parser")
-        table_line_value = [td.get_text(strip=True) for td in soup.find_all("td")]
-        table_line_head = [th.get_text(strip=True) for th in soup.find_all("th")]
-
-        if not table_line_head or not table_line_value:
+        dic = _specs_de_html(driver.page_source)
+        if dic is None:
             raise ValueError("Nenhum th/td encontrado em product-info-specs")
-
-        for head, value in zip(table_line_head, table_line_value):
-            dic[head] = value
-
-        # usa o código do produto (da URL) como nome do arquivo, porque o
-        # título repete entre produtos parecidos e ia sobrescrever o JSON
-        match = re.search(r'/p/([^/?#]+)', table_page)
-        nome_arquivo = match.group(1) if match else "produto"
-
-        os.makedirs(folder, exist_ok=True)
-
-        path = os.path.join(folder, f"{nome_arquivo}.json")
-
-        with open(path, "w", encoding="utf-8") as f:
-            json.dump(dic, f, ensure_ascii=False, indent=4)
-
-        # não fecha o driver aqui, quem fecha é o pages() lá no final
-        print(f"[JSON] {path}")
     except Exception as e:
         print(f'[TABELA] Error em {table_page}: {e}')
         _salvar_html_debug(table_page, "tabela_falhou")
+        return
+
+    # usa o código do produto (da URL) como nome do arquivo, porque o
+    # título repete entre produtos parecidos e ia sobrescrever o JSON
+    match = re.search(r'/p/([^/?#]+)', table_page)
+    nome_arquivo = match.group(1) if match else "produto"
+
+    os.makedirs(folder, exist_ok=True)
+    path = os.path.join(folder, f"{nome_arquivo}.json")
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(dic, f, ensure_ascii=False, indent=4)
+    print(f"[JSON] {path}")
+
+    # respiro entre produtos pra não parecer um robô martelando o site —
+    # delay fixo é detectável, por isso o jitter. Isso ataca direto o
+    # bloqueio por volume: antes o crawler ia num produto atrás do outro
+    # sem pausa nenhuma entre eles.
+    time.sleep(random.uniform(2.5, 6.0))
 
 
 def _hrefs_diretos(elements):
