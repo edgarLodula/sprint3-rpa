@@ -10,6 +10,10 @@ Duas frentes que se cruzam:
 1. **Pilar 1 — Web Scraping**: quatro robôs (WEG, Menzel Motors, RS Delivers e a norma ISO 10816-3) que navegam catálogos de fabricantes e uma tabela normativa, extraindo dados técnicos de motores/controladores elétricos e limites de vibração, gerando um JSON por produto/tabela em `data/json/` como evidência de coleta.
 2. **Pilar 2 — Automação de Ocorrências**: motor de regras (limites fixos por sensor) + modelo de ML (IsolationForest, não supervisionado) que avaliam as leituras de sensor do banco da [Sprint 2](../sprint2-RPA), registram eventos de anomalia, atualizam o status de saúde de cada ativo (`normal` / `alerta` / `critico`) — refletido automaticamente no dashboard da Sprint 2, sem mudança nenhuma de frontend — e enriquecem cada evento com contexto técnico vindo dos dados raspados pelo Pilar 1.
 
+## Documentação
+
+- [Documentação final da Sprint 4](https://github.com/edgarLodula/sprint4-RPA/blob/main/docs/DOCUMENTACAO_FINAL.md)
+
 ## Estrutura
 
 ```
