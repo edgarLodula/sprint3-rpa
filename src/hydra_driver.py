@@ -87,7 +87,7 @@ def build_driver(proxy: str | None) -> uc.Chrome:
     # instalado na máquina. sem isso o uc às vezes baixa uma versão mais
     # nova que não bate com o Chrome local e dá erro pra abrir o navegador.
     # se o Chrome atualizar, ajusta esse número (ver em chrome://version).
-    return uc.Chrome(options=options, version_main=151)
+    return uc.Chrome(options=options, version_main=157)
 
 
 # ---------------------------------------------------------------------------
