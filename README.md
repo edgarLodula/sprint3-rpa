@@ -12,7 +12,7 @@ Duas frentes que se cruzam:
 
 ## Documentação
 
-- [Documentação final da Sprint 4](https://github.com/edgarLodula/sprint4-RPA/blob/main/docs/DOCUMENTACAO_FINAL.md)
+- [Documentação final da Sprint 4](https://github.com/edgarLodula/RPA-Sprint4/blob/main/docs/DOCUMENTACAO_FINAL.md)
 
 ## Estrutura
 
